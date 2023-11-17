@@ -12,10 +12,19 @@ ctypedef public struct action:
     long double a3
     long double a4
 
+ctypedef public struct state:
+    long double train1pos
+    long double train2pos
+    long double train1vel
+    long double train2vel
+    int ma1start
+    int ma2start
+    int ma1end
+    int ma2end
 
-cdef public action call_predict():
+cdef public action call_predict(state obs):
     try:
-        lst = predict()
+        lst = predict(obs)
         acts = action(lst[0], lst[1], lst[2], lst[3])
     except:
         print("Predict failed. Traceback: ")
