@@ -31,10 +31,3 @@ cdef public action call_predict(state obs):
         print("Predict failed. Traceback: ")
         traceback.print_exc()
     return acts
-
-cdef public void call_init():
-    try:
-        init()
-    except:
-        print("Init failed. Traceback: ")
-        traceback.print_exc()

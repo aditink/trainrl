@@ -6,8 +6,6 @@ int main()
     PyImport_AppendInittab("caller", PyInit_caller);
     Py_Initialize();
     PyImport_ImportModule("caller");
-    // Initialize the model.
-    call_init();
     // Get an action using call_predict();
     state obs = {0.0, 0.1, 0.2, 0.3};
     action act = call_predict(obs);
